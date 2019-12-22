@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<html>
+<head>
+<style>
+    table, td, th {
+        border: 1px solid black;
+        padding: 5px;
+    }
+    td{
+        
+    }
+</style>
+</head>
+
+<body>
+    @{
+        LolDump.Models.ApiCall.LoLApiService lolApiService;
+        if (IsPost)
+        {
+            string summonerName = Request["summonerName"];
+            lolApiService = new LolDump.Models.ApiCall.LoLApiService();
+            lolApiService.LoLApiSumReq(summonerName);
+            lolApiService.LoLApiEntryReq(lolApiService.lolApiDTO.lolApiSummonerModel.id);
+            //initial table displaying sumName and sumID
+            <table id="sumTable" >
+                <tr>
+                    <th>@lolApiService.lolApiDTO.lolApiSummonerModel.name</th>
+                </tr>
+                <tr>
+                    <td>Summoner Level</td>
+                    <td>@lolApiService.lolApiDTO.lolApiSummonerModel.summonerLevel</td>    
+                </tr>
+                <tr>
+                    <td>Summoner ID</td>
+                    <td>@lolApiService.lolApiDTO.lolApiSummonerModel.id</td>
+                </tr>
+            </table>
+        }
+        else
+        {
+            <form method="post" action="">
+                Summoner Name:<br>
+                <input type="text" name="summonerName" value="">
+                <input type="submit" value="Search" class="submit">
+            </form>
+            lolApiService = null;
+        }
+    }
+
+
+</body>
+</html>
