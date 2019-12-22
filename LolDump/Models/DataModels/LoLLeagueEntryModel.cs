@@ -7,11 +7,6 @@ namespace LolDump.Models.DataModels
 {
     public class LoLLeagueEntryModel
     {
-        //this broken
-        public IList<LoLLeagueEntry> lolLeagueEntry { get; set; }
-    }
-    public class LoLLeagueEntry
-    {
         public string queueType { get; set; }
         public string summonerName { get; set; }
         public bool hotStreak { get; set; }
