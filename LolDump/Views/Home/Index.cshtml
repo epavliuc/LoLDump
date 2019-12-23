@@ -20,6 +20,11 @@
             margin-bottom: 5px;
             margin-right: 5px;
         }
+
+        #sumTable{
+          margin-left:15%;
+          margin-right:15%;
+        }
     </style>
 </head>
 
@@ -32,8 +37,7 @@
             lolApiService = new LoLApiService();
             lolApiService.LoLApiSumReq(summonerName);
             lolApiService.LoLApiEntryReq(lolApiService.lolApiDTO.lolApiSummonerModel.id);
-
-
+            lolApiService.LoLApiTftReq(lolApiService.lolApiDTO.lolApiSummonerModel.id);
 
             //initial table displaying sumName and sumID
             <table class="infotable" id="sumTable">
@@ -66,6 +70,7 @@
                 </tr>
             </table>
 
+            //try for the two ranked tables
             try
             {
                 int x = lolApiService.lolApiDTO.lolLeagueEntryModel[0].wins;
@@ -165,12 +170,12 @@
             }
             catch (System.ArgumentOutOfRangeException ex)
             {
-                System.ArgumentOutOfRangeException argEx = new System.ArgumentOutOfRangeException("Player has no ranked history", "index",ex.Message);
+                System.ArgumentOutOfRangeException argEx = new System.ArgumentOutOfRangeException("Player has no ranked history", "index", ex.Message);
             }
             finally
             {
                 //int x = lolApiService.lolApiDTO.lolLeagueEntryModel[0].wins;
-                if (lolApiService.lolApiDTO.lolLeagueEntryModel.Count==0)
+                if (lolApiService.lolApiDTO.lolLeagueEntryModel.Count == 0)
                 {
                     <table class="infotable" id="noRankedTable">
                         <tr>
@@ -179,6 +184,80 @@
                     </table>
                 }
             }
+
+            //try catch Tft details
+            try
+            {
+                int x = lolApiService.lolApiDTO.lolTftModel[0].wins;
+                //Tft Ranked Table
+                <table class="infotable" id="tftRankedTable">
+                    <tr>
+                        <th>Tft Ranked Details</th>
+                    </tr>
+                    <tr>
+                        <td>Wins</td>
+                        <td>@lolApiService.lolApiDTO.lolTftModel[0].wins</td>
+                    </tr>
+                    <tr>
+                        <td>Losses</td>
+                        <td>@lolApiService.lolApiDTO.lolTftModel[0].losses</td>
+                    </tr>
+                    <tr>
+                        <td>League Points</td>
+                        <td>@lolApiService.lolApiDTO.lolTftModel[0].leaguePoints</td>
+                    </tr>
+                    <tr>
+                        <td>Tier</td>
+                        <td>@lolApiService.lolApiDTO.lolTftModel[0].tier</td>
+                    </tr>
+                    <tr>
+                        <td>Rank</td>
+                        <td>@lolApiService.lolApiDTO.lolTftModel[0].rank</td>
+                    </tr>
+                    <tr>
+                        <td>Hot Streak</td>
+                        <td>@lolApiService.lolApiDTO.lolTftModel[0].hotStreak</td>
+                    </tr>
+                    <tr>
+                        <td>Inactive</td>
+                        <td>@lolApiService.lolApiDTO.lolTftModel[0].inactive</td>
+                    </tr>
+                    <tr>
+                        <td>Veteran</td>
+                        <td>@lolApiService.lolApiDTO.lolTftModel[0].veteran</td>
+                    </tr>
+                    <tr>
+                        <td>Fresh Blood</td>
+                        <td>@lolApiService.lolApiDTO.lolTftModel[0].freshBlood</td>
+                    </tr>
+                    <tr>
+                        <td>League Id</td>
+                        <td>@lolApiService.lolApiDTO.lolTftModel[0].leagueId</td>
+                    </tr>
+                </table>
+            }
+            catch (System.ArgumentOutOfRangeException ex)
+            {
+                System.ArgumentOutOfRangeException argEx = new System.ArgumentOutOfRangeException("Player has no ranked history", "index", ex.Message);
+            }
+            finally
+            {
+                if (lolApiService.lolApiDTO.lolLeagueEntryModel.Count == 0)
+                {
+                    <table class="infotable" id="noTftRankedTable">
+                        <tr>
+                            <th>Player has no tft ranked history</th>
+                        </tr>
+                    </table>
+                }
+            }
+
+
+
+
+
+
+
 
 
 

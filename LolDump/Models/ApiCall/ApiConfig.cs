@@ -12,6 +12,7 @@ namespace LolDump.Models.ApiCall
         public static string ChallengerApiUrl = ConfigurationManager.AppSettings["ChallengerApiUrl"];
         public static string SummonerApiUrl = ConfigurationManager.AppSettings["SummonerApiUrl"];
         public static string LeagueEntryApiUrl = ConfigurationManager.AppSettings["LeagueEntryApiUrl"];
+        public static string TftApiUrl = ConfigurationManager.AppSettings["TftApiUrl"];
         public static string ApiKey = System.IO.File.ReadAllText(ConfigurationManager.AppSettings["ApiKey"]);
         
     }

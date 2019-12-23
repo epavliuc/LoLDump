@@ -45,5 +45,16 @@ namespace LolDump.Models.ApiCall
 
             return Response.Content;
         }
+
+        //request Tft entry
+        public string ApiTftReq(string sumId)
+        {
+            var request = new RestRequest();
+            Client = new RestClient(ApiConfig.TftApiUrl + sumId);
+            Client.AddDefaultHeader("X-Riot-Token", ApiConfig.ApiKey);
+            Response = Client.Execute(request);
+
+            return Response.Content;
+        }
     }
 }

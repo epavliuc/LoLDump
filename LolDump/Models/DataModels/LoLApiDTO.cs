@@ -12,6 +12,7 @@ namespace LolDump.Models.DataModels
         public LoLChallengerModel lolApiChallengerModel { get; set; }
         public LoLSummonerModel lolApiSummonerModel { get; set; }
         public IList<LoLLeagueEntryModel> lolLeagueEntryModel { get; set; }
+        public IList<LoLTftModel> lolTftModel { get; set; }
 
         public void DeserializeChallengerApi(String lolApiResponse)
         {
@@ -26,6 +27,10 @@ namespace LolDump.Models.DataModels
         public void DeserializeEntryModel(String lolApiResponse)
         {
             lolLeagueEntryModel = JsonConvert.DeserializeObject<IList<LoLLeagueEntryModel>>(lolApiResponse);
+        }
+        public void DeserializeTftModel(String lolApiResponse)
+        {
+            lolTftModel = JsonConvert.DeserializeObject<IList<LoLTftModel>>(lolApiResponse);
         }
     }
 }

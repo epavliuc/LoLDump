@@ -134,6 +134,7 @@
     <Compile Include="Models\DataModels\LoLChallengerModel.cs" />
     <Compile Include="Models\DataModels\LoLLeagueEntryModel.cs" />
     <Compile Include="Models\DataModels\LoLSummonerModel.cs" />
+    <Compile Include="Models\DataModels\LoLTftModel.cs" />
     <Compile Include="Models\Methods\Methods.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
