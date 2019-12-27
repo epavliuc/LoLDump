@@ -56,5 +56,23 @@ namespace LolDump.Models.ApiCall
 
             return Response.Content;
         }
+        public string ApiMasteryReq(string sumId)
+        {
+            var request = new RestRequest();
+            Client = new RestClient(ApiConfig.MasteryApiUrl + sumId);
+            Client.AddDefaultHeader("X-Riot-Token", ApiConfig.ApiKey);
+            Response = Client.Execute(request);
+
+            return Response.Content;
+        }
+
+        public string ApiChampionReq()
+        {
+            var request = new RestRequest();
+            Client = new RestClient("http://ddragon.leagueoflegends.com/cdn/9.24.2/data/en_US/champion.json");
+            Response = Client.Execute(request);
+
+            return Response.Content;
+        }
     }
 }

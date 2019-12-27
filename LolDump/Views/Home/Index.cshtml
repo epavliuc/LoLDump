@@ -38,6 +38,7 @@
             lolApiService.LoLApiSumReq(summonerName);
             lolApiService.LoLApiEntryReq(lolApiService.lolApiDTO.lolApiSummonerModel.id);
             lolApiService.LoLApiTftReq(lolApiService.lolApiDTO.lolApiSummonerModel.id);
+            lolApiService.LoLApiMasteryReq(lolApiService.lolApiDTO.lolApiSummonerModel.id);
 
             //initial table displaying sumName and sumID
             <table class="infotable" id="sumTable">
@@ -251,16 +252,6 @@
                     </table>
                 }
             }
-
-
-
-
-
-
-
-
-
-
         }
         else
         {
@@ -271,7 +262,6 @@
             </form>
         }
     }
-
 
 </body>
 </html>

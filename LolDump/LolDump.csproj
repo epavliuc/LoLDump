@@ -130,6 +130,8 @@
     <Compile Include="Models\ApiCall\ApiConfig.cs" />
     <Compile Include="Models\ApiCall\LoLApiCall.cs" />
     <Compile Include="Models\ApiCall\LoLApiService.cs" />
+    <Compile Include="Models\DataModels\LoLChampionModel.cs" />
+    <Compile Include="Models\DataModels\LoLMasteryModel.cs" />
     <Compile Include="Models\DataModels\LoLApiDTO.cs" />
     <Compile Include="Models\DataModels\LoLChallengerModel.cs" />
     <Compile Include="Models\DataModels\LoLLeagueEntryModel.cs" />
@@ -175,6 +177,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Tables\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

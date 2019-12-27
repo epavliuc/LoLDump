@@ -37,5 +37,15 @@ namespace LolDump.Models.ApiCall
             lolApiDTO.DeserializeTftModel(lolApiCall.ApiTftReq(sumId));
         }
 
+        public void LoLApiMasteryReq(string sumId)
+        {
+            lolApiDTO.DeserializeMasteryModel(lolApiCall.ApiMasteryReq(sumId));
+        }
+
+        public void LoLApiChampionReq(string sumId)
+        {
+            lolApiDTO.DeserializeMasteryModel(lolApiCall.ApiChampionReq());
+        }
+
     }
 }
