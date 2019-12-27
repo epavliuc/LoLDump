@@ -42,9 +42,9 @@ namespace LolDump.Models.ApiCall
             lolApiDTO.DeserializeMasteryModel(lolApiCall.ApiMasteryReq(sumId));
         }
 
-        public void LoLApiChampionReq(string sumId)
+        public void LoLApiChampionReq()
         {
-            lolApiDTO.DeserializeMasteryModel(lolApiCall.ApiChampionReq());
+            lolApiDTO.DeserializeChampionModel(lolApiCall.ApiChampionReq());
         }
 
     }

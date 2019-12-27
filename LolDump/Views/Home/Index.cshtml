@@ -39,12 +39,19 @@
             lolApiService.LoLApiEntryReq(lolApiService.lolApiDTO.lolApiSummonerModel.id);
             lolApiService.LoLApiTftReq(lolApiService.lolApiDTO.lolApiSummonerModel.id);
             lolApiService.LoLApiMasteryReq(lolApiService.lolApiDTO.lolApiSummonerModel.id);
+            lolApiService.LoLApiChampionReq();
 
             //initial table displaying sumName and sumID
             <table class="infotable" id="sumTable">
-                <tr>
-                    <th>Summoner Details</th>
-                </tr>
+                    <tr>
+                        <th>Summoner Details</th>
+                        <th>@lolApiService.lolApiDTO.lolMasteryModel[1].championPoints</th>
+                        <th>@lolApiService.lolApiDTO.lolChampionModel.data["Aatrox"].title</th>
+                  
+
+                        @*blurp broken*@
+                        <th>@lolApiService.lolApiDTO.lolChampionModel.data["Aatrox"].blurp</th>
+                    </tr>
                 <tr>
                     <td>Name</td>
                     <td>@lolApiService.lolApiDTO.lolApiSummonerModel.name</td>
